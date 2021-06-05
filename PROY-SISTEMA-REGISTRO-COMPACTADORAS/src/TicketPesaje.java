@@ -1,4 +1,6 @@
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class TicketPesaje<E> {
 	private String numero;
@@ -29,12 +31,22 @@ public class TicketPesaje<E> {
 	//Implementar un método que retorne la diferencia entre peso de ingreso y peso de salida
 	//Implementar un método que almacene tickets de pesaje en una lista enlazada
 	//Implementar un método que retorne los tickets insertados en la lista enlazada
+	public double DiferenciaPeso (Double pesoIngreso2, Double pesoSalida2) {
+		double num = pesoIngreso2 - pesoSalida2;
+		return Math.round(num *100.0)/100.0;}
+	
+	public String FechaHora()
+	{
+		Date objDate = new Date();
+		String strDateFormat = "HH:mm:ss yyyy/MM/dd";
+		SimpleDateFormat  objSDF = new SimpleDateFormat(strDateFormat);
+		return objSDF.format(objDate);
+	}
 	@Override
 	public String toString() {//FALTA OPTIMIZAR TOSTRING Y MEJORAR EL DISEÑO DE SALIDA
-		return FechaHora.now()+//LA FECHA DEBE TENER UN FORMATO
-				"\nTicketPesaje [\nnumero=" + numero + ", \nFechaHora=" + FechaHora + ", \nPesoIngreso=" + PesoIngreso
-				+ ", \nPesoSalida=" + PesoSalida + ", \ncompactadora=" + compactadora + ", \nconductor=" + conductor
-				+ ", \noperario=" + operario + "]";
+		return " \nHora / Fecha: "+ FechaHora() +"\nTicketPesaje \nNumero        = " + numero + " \nPesoIngreso   = " + PesoIngreso
+				+ " \nPesoSalida    = " + PesoSalida + "\nDiferencia    = "+ DiferenciaPeso(PesoIngreso,PesoSalida) +" \nCompactadora=" + compactadora + ", \nconductor=" + conductor
+				+ " \nOperario" + operario ;
 	}
 	
 

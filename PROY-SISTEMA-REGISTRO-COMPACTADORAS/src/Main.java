@@ -19,9 +19,20 @@ public class Main {
 		System.out.println("//");
 		System.out.println("//");
 		System.out.println("Probando TicketPesaje");
-		TicketPesaje ticket1 = new TicketPesaje("001",200.23,150.12,new Compactadora("ABC-321","MPA","Escombros","001-23232"),
-				new Conductor("47299871","Luis","Barrios","MPA"),new Operario("4567771","Renzo","Vera","RenzoV"));
+		System.out.println("\n***************PRIMER TICKET***************");
+		TicketPesaje<Object> ticket1 = new TicketPesaje<Object>("001",200.23,150.12,new Compactadora("ABC-321","MPA","Escombros","001-23232"),
+				new Conductor("47299871","Luis","Barrios","MPA"),new Operario("4567771","Renzo","Vera","RenVr"));
 		System.out.println(ticket1);
+		
+		System.out.println("\n***************SEGUNDO TICKET***************");
+		TicketPesaje<Object> ticket2 = new TicketPesaje<Object>("002",390.32,234.08,new Compactadora("DEF-566","MPA","Escombros","001-23232"),
+				new Conductor("46790971","Juan","Peña","MPA"),new Operario("4555620","Roberto","Talavera","RobT"));
+		System.out.println(ticket2);
+		ListLinked<Object> Almacenar = new ListLinked<Object>();
+		Almacenar.insertFirst(ticket2);
+		Almacenar.insertFirst(ticket1);
+		System.out.println("\n***************Tickets***************");
+		System.out.println(Almacenar.toString());
 	}
 
 }
