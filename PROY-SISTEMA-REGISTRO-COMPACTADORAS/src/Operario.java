@@ -11,7 +11,7 @@ public class Operario extends Persona{
 	@Override
 	public String toString() {
 		//mostrar nombre y primer caracter de apellido en un solo STRING
-		return "\nOperario [Apodo=" + Apodo + "]";
+		return "\n"+Nombre+" "+Apellido.charAt(0)+"\nApodo: " + Apodo ;
 	}
 	
 
