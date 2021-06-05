@@ -28,7 +28,7 @@ public class TicketPesaje<E> {
 	public void setPesoIngreso(Double pesoIngreso) {PesoIngreso = pesoIngreso;}
 	public Double getPesoSalida() {return PesoSalida;}
 	public void setPesoSalida(Double pesoSalida) {PesoSalida = pesoSalida;}
-	public double DiferenciaPeso (Double pesoIngreso2, Double pesoSalida2) {
+	public double PesoNeto (Double pesoIngreso2, Double pesoSalida2) {
 		double num = pesoIngreso2 - pesoSalida2;
 		return Math.round(num *100.0)/100.0;}
 	
@@ -42,7 +42,7 @@ public class TicketPesaje<E> {
 	@Override
 	public String toString() {//FALTA OPTIMIZAR TOSTRING Y MEJORAR EL DISEÑO DE SALIDA
 		return " \nHora / Fecha: "+ FechaHora() +"\nTicketPesaje \nNumero        = " + numero + " \nPesoIngreso   = " + PesoIngreso
-				+ " \nPesoSalida    = " + PesoSalida + "\nDiferencia    = "+ DiferenciaPeso(PesoIngreso,PesoSalida) +" \nCompactadora=" + compactadora + ", \nconductor=" + conductor
+				+ " \nPesoSalida    = " + PesoSalida + "\nPeso Neto    = "+ PesoNeto(PesoIngreso,PesoSalida) +" \nCompactadora=" + compactadora + ", \nconductor=" + conductor
 				+ " \nOperario" + operario ;
 	}
 	
