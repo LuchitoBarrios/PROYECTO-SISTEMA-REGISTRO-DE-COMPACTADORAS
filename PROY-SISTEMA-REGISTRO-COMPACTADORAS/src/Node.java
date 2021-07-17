@@ -12,12 +12,6 @@ public class Node <T>{
 	public void setData(T data) {this.data=data;}
 	public void setNext(Node<T> next) {this.next=next;}
 	
-	//function to returns the info stored in the node
-	//postcondicion: returns info
 	public String toString() {
 		return this.data.toString();
-	}
-	
-	
-
-}
+	}}

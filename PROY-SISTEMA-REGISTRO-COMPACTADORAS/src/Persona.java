@@ -3,7 +3,6 @@ public abstract class Persona {
 	protected String DNI;
 	protected String Nombre;
 	protected String Apellido;
-	//constructor
 	public Persona(String DNI, String Nombre, String Apellido) {
 		this.DNI=DNI;
 		this.Nombre=Nombre;

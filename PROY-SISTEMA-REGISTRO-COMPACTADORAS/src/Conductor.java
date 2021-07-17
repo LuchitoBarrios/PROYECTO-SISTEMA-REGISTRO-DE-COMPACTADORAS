@@ -1,7 +1,6 @@
 
 public class Conductor extends Persona{
 	private String RazonSocial;
-	//constructor
 	public Conductor(String DNI,String Nombre,String Apellido,String RazonSocial) {
 		super(DNI,Nombre,Apellido);
 		this.RazonSocial=RazonSocial;
@@ -13,5 +12,4 @@ public class Conductor extends Persona{
 		return "\nDNI Conductor \t\t= "+this.DNI+
 				"\nConductor \t\t= "+this.Nombre+" "+this.Apellido+
 				"\nRazon Social \t\t= "+this.RazonSocial;
-	}
-}
+	}}

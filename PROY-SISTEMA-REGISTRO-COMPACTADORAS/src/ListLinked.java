@@ -2,7 +2,6 @@
 public class ListLinked <T> implements TDAList<T>{
 	private Node<T> first;
 	private int count;
-	//
 	public ListLinked() {
 		this.first = null;
 		this.count = 0;
@@ -46,42 +45,31 @@ public class ListLinked <T> implements TDAList<T>{
 			this.count++;
 		}
 	};
-	//DEVOLVER EL ÚLTIMO NODO PARA EL INSERTLAST
-	//PreCondition: List is not empty
 	private Node<T> getLastNode(){
 		Node<T> aux= this.first;
 		while(aux.getNext()!=null)
 			aux=aux.getNext();
 		return aux;
 	}
-	//
 	public void insertFirst(T x) {
-		/*Node<T> nuevo= new Node<T>(x);
-		nuevo.setNext(this.first);
-		this.first=nuevo;*/
-		//
 		this.first = new Node<T>(x,this.first);
 		this.count++;
 	};
 	public void remove(T x) {
 		Node<T> aux = this.first;
-		Node<T> antecesor=null; //nodo antecesor
-		//asignar el primer nodo al siguiente
+		Node<T> antecesor=null; 
 		if(aux!=null && aux.getData().equals(x)) {
 			this.first=aux.getNext();
-			return;//terminar ejecución
+			return;
 		}
-		//asignar nodo auxiliar al antecesor mientras la data no sea igual y mientras el auxiliar no sea nulo
 		while (aux!=null && aux.getData()!=x) {
 			antecesor=aux;
 			aux = aux.getNext();
-			this.count--;//contador baja de acuerdo a elemenos eliminados
+			this.count--;
 		}
-		//terminar ejecución si el auxiliar es nulo
 		if(aux==null) {
-			return;//terminar ejecución
+			return;
 		}
-		//definir el nodo siguiente del antecesor como el nodo siguiente del auxiliar (aplicando el remove)
 		antecesor.setNext(aux.getNext());
 		
 	};

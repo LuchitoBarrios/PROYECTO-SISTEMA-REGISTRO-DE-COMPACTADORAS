@@ -3,16 +3,14 @@ import java.time.LocalDateTime;
 import java.util.Date;
 
 public class TicketPesaje<E> {
-	private String numero;
-	LocalDateTime FechaHora; //darle formato
+	private int numero;
+	LocalDateTime FechaHora;
 	private Double PesoIngreso;
 	private Double PesoSalida;
 	Compactadora compactadora;
 	Conductor conductor;
 	Operario operario;
-	//private ListLinked<E> ListaTickets;
-	//constructor
-	public TicketPesaje(String numero, Double pesoIngreso, Double pesoSalida, Compactadora compactadora,
+	public TicketPesaje(int numero, Double pesoIngreso, Double pesoSalida, Compactadora compactadora,
 			Conductor conductor, Operario operario) {
 		super();
 		this.numero = numero;
@@ -20,18 +18,16 @@ public class TicketPesaje<E> {
 		PesoSalida = pesoSalida;
 		this.compactadora = compactadora;
 		this.conductor = conductor;
-		this.operario = operario;
-	}
-	public String getNumero() {return numero;}
-	public void setNumero(String numero) {this.numero = numero;}
+		this.operario = operario;}
+	public int getNumero() {return numero;}
+	public void setNumero(int numero) {this.numero = numero;}
 	public Double getPesoIngreso() {return PesoIngreso;}
 	public void setPesoIngreso(Double pesoIngreso) {PesoIngreso = pesoIngreso;}
 	public Double getPesoSalida() {return PesoSalida;}
 	public void setPesoSalida(Double pesoSalida) {PesoSalida = pesoSalida;}
 	public double PesoNeto (Double pesoIngreso2, Double pesoSalida2) {
 		double num = pesoIngreso2 - pesoSalida2;
-		return Math.round(num *100.0)/100.0;}
-	
+		return Math.round(num *100.0)/100.0;}	
 	public String FechaHora()
 	{
 		Date objDate = new Date();
@@ -40,11 +36,12 @@ public class TicketPesaje<E> {
 		return objSDF.format(objDate);
 	}
 	@Override
-	public String toString() {//FALTA OPTIMIZAR TOSTRING Y MEJORAR EL DISEÑO DE SALIDA
-		return " \nHora / Fecha: "+ FechaHora() +"\nTicketPesaje \nNumero        = " + numero + " \nPesoIngreso   = " + PesoIngreso
-				+ " \nPesoSalida    = " + PesoSalida + "\nPeso Neto    = "+ PesoNeto(PesoIngreso,PesoSalida) +" \nCompactadora=" + compactadora + ", \nconductor=" + conductor
-				+ " \nOperario" + operario ;
-	}
-	
-
-}
+	public String toString() {
+		return " \nHora / Fecha: "+ FechaHora() +"\n\tTICKET DE PESAJE"+"\nNumero\t\t\t= " + numero 
+				+ " \nPesoIngreso\t\t= " + PesoIngreso
+				+ " \nPesoSalida\t\t= " + PesoSalida + "\nPeso Neto\t\t= "
+				+ PesoNeto(PesoIngreso,PesoSalida) +" \n\t  COMPACTADORA" + compactadora 
+				+ " \n\t   CONDUCTOR" + conductor
+				+ " \n\t   OPERARIO" 
+				+ " \nOperario\t\t= " + operario ;
+	}}
