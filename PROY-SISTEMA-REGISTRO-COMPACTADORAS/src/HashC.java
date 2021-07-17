@@ -13,7 +13,6 @@ public class HashC<E,TicketPesaje extends Comparable<E>> {
 	}
 	protected ArrayList<Element> table;
 	protected int m;
-	
 	public HashC (int n) {
 		this.m=n; 
 		this.table= new ArrayList<Element>(m);
@@ -24,7 +23,6 @@ public class HashC<E,TicketPesaje extends Comparable<E>> {
 	private int functionHash(int key) {
 		return key%m;
 	}
-	
 	private int linearProbing(int dressHash, int key) {
 		int posInit = dressHash;
 		do {
@@ -81,7 +79,6 @@ public class HashC<E,TicketPesaje extends Comparable<E>> {
 		}while(dressHash != posInit);
 		return -1;
 	}
-	//
 	public Object remove(int key) {
 		int dressHash=functionHash(key);
 		dressHash=linearProbingRemove(dressHash,key);
@@ -91,7 +88,6 @@ public class HashC<E,TicketPesaje extends Comparable<E>> {
 		
 		return table.get(dressHash).reg.value;
 	}
-
 	public String toString() {
 		String s = "D.Real\t.D.Hash\tRegister\n";
 		int i = 0;
@@ -104,5 +100,4 @@ public class HashC<E,TicketPesaje extends Comparable<E>> {
 		}
 		return s;
 	}
-
 }
